@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppFluxoDeCaixa.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240904120516_Inicial")]
-    partial class Inicial
+    [Migration("20240910131326_AddFornecedores")]
+    partial class AddFornecedores
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

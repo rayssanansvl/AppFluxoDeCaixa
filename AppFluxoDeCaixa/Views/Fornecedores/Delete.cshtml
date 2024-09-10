@@ -1,0 +1,50 @@
+﻿@model AppFluxoDeCaixa.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Deletar Fornecedor";
+}
+
+<h1 class="display-5 text-light text-center">Deletar Cadastro de Fornecedor?</h1>
+
+<h3 class="mt-3 mb-3">Deseja excluir esse cadastro?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.CNPJ)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CNPJ)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-9">
+            @Model.Email
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="FornecedorId" />
+        <input type="submit" value="Excluir" class="btn btn-danger" /> |
+        <a class="btn btn-outline-secondary" asp-action="Index">Cancelar</a>
+    </form>
+</div>

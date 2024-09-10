@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AppFluxoDeCaixa.Models.Fornecedor>
+
+@{
+    ViewData["Title"] = "Cadastro de ";
+}
+<div class="container">
+    <h1 class="display-5 text-light text-center">Cadastro de Fornecedores</h1>
+    <p>
+        <a asp-action="Create" class="btn btn-lg btn-secondary mt-3">Adicionar</a>
+    </p>
+
+    <div class="table-responsive mt-5">
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th class="bg-black">
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+                    <th class="bg-black">
+                        @Html.DisplayNameFor(model => model.CNPJ)
+                    </th>
+                    <th class="bg-black">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th class="bg-black">
+                        @Html.DisplayNameFor(model => model.Telefone)
+                    </th>
+                    <th class="bg-black">
+                        @Html.DisplayNameFor(model => model.DataCadastro)
+                    </th>
+                    <th class="bg-black">
+                        @Html.DisplayNameFor(model => model.Ativo)
+                    </th>
+                    <th class="bg-black"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CNPJ)
+                        </td>
+                        <td class="text-light text-decoration-none">
+                            @item.Email
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataCadastro)
+                        </td>
+                        <td>
+                            @if (item.Ativo == true)
+                            {
+                                <span>Sim</span>
+                            }
+                            else
+                            {
+                                <span>Não</span>
+                            }
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-outline-primary me-2" asp-action="Edit" asp-route-id="@item.FornecedorId">Editar</a>
+
+                            <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@item.FornecedorId">Deletar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
